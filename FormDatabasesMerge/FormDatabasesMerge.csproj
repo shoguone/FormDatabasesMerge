@@ -20,6 +20,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,7 +33,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -100,6 +100,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="SelectDBWindow.xaml.cs">
       <DependentUpon>SelectDBWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -149,6 +154,11 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityModelSingle.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.sqlce" />
     <None Include="Properties\DataSources\FormDatabasesMerge.EntityDataModel.EntityContextGeneral.datasource" />
     <None Include="Properties\DataSources\FormDatabasesMerge.EntityDataModel.EntityContextSingle.datasource" />
     <None Include="Properties\Settings.settings">
@@ -163,6 +173,9 @@
     <Resource Include="Images\FireBird.ico" />
     <Resource Include="FireBird.ico" />
     <Resource Include="Images\Combine.ico" />
+    <Content Include="Database1.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Libraries\FirebirdSql.Data.FirebirdClient.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +187,11 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">

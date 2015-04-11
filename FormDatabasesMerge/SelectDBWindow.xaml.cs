@@ -96,11 +96,26 @@ namespace FormDatabasesMerge
                         .ToList();
                 }
 
+                using (var ctx = new Model1Container())
+                {
+                    var a = new Products();
+
+                    int id = 0;
+                    if (ctx.Products.Any())
+                        id = ctx.Products.Max(p => p.ID) + 1;
+
+                    a.ID = id;
+                    a.Name = "__";
+
+                    ctx.AddToProducts(a);
+                    ctx.SaveChanges();
+                }
+
                 Init();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                MessageBox.Show(string.Format("{0}\n{1}", ex.Message, ex.StackTrace));
             }
         }
 
