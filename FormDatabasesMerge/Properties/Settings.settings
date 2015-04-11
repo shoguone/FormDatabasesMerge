@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FormDatabasesMerge.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBExtension" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.GDB</Value>
+    </Setting>
+    <Setting Name="InternalDriveLetter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G</Value>
+    </Setting>
+    <Setting Name="ExternalServerAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\master</Value>
+    </Setting>
+    <Setting Name="CommitBufferSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">32</Value>
+    </Setting>
+    <Setting Name="ProgressBarUpdateRate" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="DefaultYear" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2014</Value>
+    </Setting>
+    <Setting Name="DefaultNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
