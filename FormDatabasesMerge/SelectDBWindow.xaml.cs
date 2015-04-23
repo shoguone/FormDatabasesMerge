@@ -362,7 +362,6 @@ namespace FormDatabasesMerge
                             ctxg.SaveChanges();
                         }
                     }
-                    //ctxg.SaveChanges(
                     ctxg.SaveChanges();
 
                     DateTime date = DateTime.Now.Date;
