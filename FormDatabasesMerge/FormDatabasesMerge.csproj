@@ -35,6 +35,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <DontImportPostSharp>True</DontImportPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,9 @@
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=2.5.2.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="PostSharp">
+      <HintPath>..\packages\PostSharp.2.1.7.35\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -82,6 +86,15 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xtensive.Aspects">
+      <HintPath>..\packages\Xtensive.Orm.4.6.8\Lib\Net35\Xtensive.Aspects.dll</HintPath>
+    </Reference>
+    <Reference Include="Xtensive.Core">
+      <HintPath>..\packages\Xtensive.Orm.4.6.8\Lib\Net35\Xtensive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xtensive.Orm">
+      <HintPath>..\packages\Xtensive.Orm.4.6.8\Lib\Net35\Xtensive.Orm.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -105,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RequiresPostSharp.cs" />
     <Compile Include="SelectDBWindow.xaml.cs">
       <DependentUpon>SelectDBWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -159,6 +173,7 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model1.edmx.sqlce" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\FormDatabasesMerge.EntityDataModel.EntityContextGeneral.datasource" />
     <None Include="Properties\DataSources\FormDatabasesMerge.EntityDataModel.EntityContextSingle.datasource" />
     <None Include="Properties\Settings.settings">
@@ -201,6 +216,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\PostSharp.2.1.7.35\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.2.1.7.35\tools\PostSharp.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
